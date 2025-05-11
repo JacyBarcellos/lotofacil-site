@@ -1,97 +1,347 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lotofácil Pro Avançado</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f7f7f7;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #007bff;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    section {
-      padding: 2rem 1rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .cta {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .cta a {
-      background: #28a745;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    .cta a:hover {
-      background: #218838;
-    }
-    .features li {
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: #333;
-      color: #ccc;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aumente suas chances na Lotofácil com análise estatística avançada. Descubra padrões e gere jogos inteligentes com o Lotofácil Pro Avançado.">
+    <title>Lotofácil Pro Avançado | Jogue com Inteligência Estratégica</title>
+    <style>
+        /* --- CSS BÁSICO (Mover para arquivo externo é recomendado) --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container { max-width: 960px; margin: 30px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        header { text-align: center; padding-bottom: 20px; border-bottom: 1px solid #eee; margin-bottom: 30px; }
+        header img.logo-header { max-width: 400px; margin-bottom: 20px; } /* Estilo para imagem do header */
+        header h1 { color: #0056b3; font-size: 2.5em; margin-bottom: 10px; }
+        header h2.subtitle { color: #555; font-size: 1.3em; font-weight: normal; margin-bottom: 20px; } /* Subtítulo Header */
+        section { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; }
+        h2 { color: #007bff; text-align: center; margin-bottom: 25px; font-size: 2em; }
+        h3 { color: #17a2b8; margin-bottom: 10px; font-size: 1.4em; display: flex; align-items: center; } /* Flex para alinhar ícone e texto */
+        h3 svg { margin-right: 10px; width: 24px; height: 24px; flex-shrink: 0; } /* Estilo para ícones SVG */
+
+        /* Lista geral (problema/solução, o que recebe) */
+        ul.check-list { list-style: none; padding: 0; }
+        ul.check-list li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2328a745" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left 5px; /* Ajuste vertical */
+            padding-left: 25px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+        ul.problem-list { list-style: none; padding: 0;} /* Lista de problemas */
+        ul.problem-list li {
+             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23dc3545" class="bi bi-x-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/></svg>') no-repeat left 5px;
+             padding-left: 25px; margin-bottom: 10px; line-height: 1.8;
+        }
+
+
+        /* Lista de Recursos */
+        .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; } /* Layout em grade */
+        .feature-item { padding: 15px; background-color: #f9f9f9; border-radius: 5px; border-left: 4px solid #17a2b8; }
+        .feature-item h3 { color: #17a2b8; font-size: 1.2em; margin-top: 0; }
+        .feature-item p { font-size: 0.95em; margin-bottom: 0; }
+        .feature-item strong { color: #0056b3; }
+
+        .screenshots { text-align: center; }
+        .screenshots figure { display: inline-block; margin: 10px; border: 1px solid #ddd; padding: 5px; border-radius: 4px; background-color: #fff;}
+        .screenshots img { max-width: 100%; height: auto; display: block; }
+        .screenshots figcaption { font-size: 0.9em; color: #555; margin-top: 5px; }
+
+        blockquote { border-left: 5px solid #007bff; margin: 20px 0; padding: 15px 20px; background-color: #f0f8ff; font-style: italic; border-radius: 0 5px 5px 0;}
+        blockquote cite { display: block; margin-top: 10px; font-style: normal; font-weight: bold; color: #333; }
+
+        .disclaimer { padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .warning { background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404; }
+        .danger { background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; }
+        .danger h2 { color: #721c24; } /* Cor do H2 dentro do disclaimer danger */
+        .danger ul {list-style: none; padding: 0;}
+        .danger ul li { /* Ícone para disclaimer */
+             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23721C24" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16"><path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>') no-repeat left 5px;
+             padding-left: 25px; margin-bottom: 10px; line-height: 1.8;
+        }
+
+
+        .pricing-box { text-align: center; padding: 30px; border: 2px dashed #007bff; border-radius: 8px; background-color: #e7f3ff; margin: 20px auto; max-width: 400px; }
+        .price { font-size: 2.8em; font-weight: bold; color: #0056b3; margin: 15px 0; }
+        .payment-icons img { height: 30px; margin: 5px; vertical-align: middle; } /* Estilo para ícones de pagamento */
+
+        .cta-button { display: inline-block; background-color: #28a745; color: #fff; padding: 15px 30px; font-size: 1.5em; font-weight: bold; text-decoration: none; border-radius: 8px; transition: background-color 0.3s ease; border: none; cursor: pointer; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .cta-button:hover { background-color: #218838; box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); }
+        .cta-section { text-align: center; }
+
+        .guarantee-box { text-align: center; padding: 20px; background-color: #f0fff0; border: 1px solid #c3e6cb; border-radius: 8px; }
+        .guarantee-box img { max-width: 100px; margin-bottom: 15px; }
+
+        dl dt { font-weight: bold; margin-top: 15px; color: #0056b3; }
+        dl dd { margin-left: 0; margin-bottom: 10px; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.9em; color: #666; }
+        footer p { margin-bottom: 5px; }
+        footer a { color: #007bff; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Lotofácil Pro Avançado</h1>
-    <p>Gere jogos com estratégias inteligentes e análise estatística profissional</p>
-  </header>
 
-  <section>
-    <h2>O que você vai receber:</h2>
-    <ul class="features">
-      <li>🎯 Análise estatística com frequência, atraso e clusters K-Means</li>
-      <li>📊 Geração de jogos com 5 estratégias personalizadas</li>
-      <li>📁 Exportação para Excel/CSV</li>
-      <li>🔐 Sistema de licença para uso exclusivo</li>
-      <li>🧠 Interface intuitiva com suporte a Windows</li>
-    </ul>
+    <div class="container">
 
-    <div class="cta">
-      <p><strong>Oferta Especial de Lançamento:</strong></p>
-      <p style="font-size: 1.5rem; color: #dc3545;">De <s>R$ 149,00</s> por apenas <strong>R$ 89,90</strong></p>
-      <a href="https://pag.ae/7_C2NMN7G" target="_blank">COMPRAR AGORA</a>
-    </div>
+        <header>
+            <!-- ### IMAGEM CABEÇALHO ### -->
+            <img src="cabaca.png" alt="Análise e Estratégia Lotofácil Pro Avançado" class="logo-header">
 
-    <h2>Bônus Exclusivos:</h2>
-    <ul class="features">
-      <li>📘 E-book com dicas para jogar em bolões</li>
-      <li>📄 Planilha de controle de apostas</li>
-      <li>🎥 Vídeo tutorial mostrando o uso passo a passo</li>
-    </ul>
-  </section>
+            <h1>Cansado de Contar Apenas com a Sorte na Lotofácil? 🤔</h1>
+            <h2 class="subtitle">Chegou a Hora de Virar o Jogo! Descubra Padrões Ocultos e Monte Suas Apostas com Inteligência Estratégica Usando o Lotofácil Pro Avançado!</h2>
+             <p><strong>O Software Que Analisa Milhares de Sorteios Passados Para Revelar Tendências e Gerar Jogos Estatisticamente Mais Promissores!</strong></p>
+        </header>
 
-  <footer>
-    Desenvolvido por [Seu Nome/Empresa] • Todos os direitos reservados © 2025<br>
-    <small>Aviso: Este software não garante prêmios. Use com responsabilidade.</small>
-  </footer>
+        <section id="problema-solucao">
+            <h3>Você se identifica com isso?</h3>
+            <ul class="problem-list"> <!-- Lista de problemas com ícone 'X' -->
+                <li>Apostas semanais na Lotofácil, mas os prêmios parecem escapar por entre os dedos?</li>
+                <li>A sensação de que escolher números aleatoriamente é como jogar uma moeda no poço dos desejos?</li>
+                <li>A curiosidade sobre se existem padrões reais por trás dos sorteios, mas sem as ferramentas para encontrá-los?</li>
+                <li>O desejo de ter uma abordagem mais <strong>sistemática</strong> e <strong>inteligente</strong> para suas apostas?</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">Imagine se você pudesse...</h3>
+            <ul class="check-list"> <!-- Lista de soluções com ícone checkmark -->
+                <li>Analisar <strong>automaticamente</strong> o histórico completo da Lotofácil, identificando números "quentes", "frios" e os mais "atrasados"?</li>
+                <li>Descobrir quais <strong>pares (e até trios!)</strong> de números têm o costume de sair juntos com mais frequência?</li>
+                <li>Entender os <strong>intervalos de soma, contagem de pares/ímpares, primos e Fibonacci</strong> mais comuns nos sorteios premiados?</li>
+                <li>Usar <strong>inteligência artificial (Clustering K-Means)</strong> para agrupar sorteios com características semelhantes e revelar estruturas ocultas?</li>
+                <li><strong>Gerar jogos otimizados</strong> que se alinham com esses padrões históricos, filtrando combinações estatisticamente improváveis?</li>
+            </ul>
+             <p style="text-align: center; font-size: 1.2em; margin-top: 30px;"><strong>Esse poder analítico agora está ao seu alcance! Apresentamos o...</strong></p>
+        </section>
+
+        <section id="apresentacao" style="text-align: center;">
+             <!-- ### LOGO DO SOFTWARE ### -->
+            <img src="logo.png" alt="Logo Lotofácil Pro Avançado" style="max-width: 180px; margin-bottom: 20px;">
+
+            <h2>Lotofácil Pro Avançado v2.1 (MP)</h2>
+
+            <p>O <strong>Lotofácil Pro Avançado</strong> não é mais um gerador de números aleatórios. É uma <strong>ferramenta poderosa de análise e estratégia</strong>, construída com algoritmos avançados e baseada em <strong>dados reais</strong> de milhares de concursos da Lotofácil.</p>
+            <p>Nós transformamos a complexidade da análise estatística em uma interface <strong>simples e intuitiva</strong>, permitindo que <em>você</em> tome decisões mais informadas sobre seus jogos.</p>
+            <p style="font-size: 1.3em; color: #0056b3; font-weight: bold; margin-top: 20px;">Pare de jogar no escuro. Comece a jogar com inteligência!</p>
+        </section>
+
+        <section id="recursos">
+            <h2>✨ O Que Torna o Lotofácil Pro Avançado ÚNICO? ✨</h2>
+
+            <div class="feature-list">
+                <div class="feature-item">
+                     <h3>
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                       Análise Histórica Profunda (MP)
+                    </h3>
+                    <p>Analise centenas/milhares de concursos em minutos! <strong>Benefício:</strong> Insights atualizados rapidamente.</p>
+                </div>
+                 <div class="feature-item">
+                     <h3>
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                         Identificação de Tendências
+                    </h3>
+                    <p>Frequência (quentes/frios), Atraso, Pares Frequentes. <strong>Benefício:</strong> Baseie suas escolhas em dados.</p>
+                </div>
+                 <div class="feature-item">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                        Padrões Estatísticos Revelados
+                    </h3>
+                    <p>Análise de Soma, Pares/Ímpares, Primos, Fibonacci, Grade. <strong>Benefício:</strong> Entenda o "DNA" dos sorteios.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cpu-fill" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                        Inteligência Artificial (K-Means)
+                    </h3>
+                    <p>Agrupa sorteios passados com estruturas semelhantes. <strong>Benefício:</strong> Gere jogos inspirados nessas estruturas.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                        Múltiplas Estratégias de Geração
+                    </h3>
+                    <p>Escolha: "Estatística", "Cluster", "Balanceada", etc. <strong>Benefício:</strong> Adapte a geração ao seu estilo.</p>
+                </div>
+                 <div class="feature-item">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                        Validação Inteligente de Jogos
+                    </h3>
+                    <p>Filtra jogos que fogem drasticamente dos padrões. <strong>Benefício:</strong> Apostas mais plausíveis.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                       Interface Amigável e Intuitiva
+                    </h3>
+                    <p>Fácil de usar, mesmo sem conhecimentos avançados. <strong>Benefício:</strong> Comece a usar imediatamente.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">...</svg> <!-- SVG Ícone -->
+                        Exportação e Cópia Fáceis
+                    </h3>
+                    <p>Copie no formato simples ou exporte para CSV. <strong>Benefício:</strong> Leve seus jogos para onde precisar.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="provas">
+            <h2>Veja o Software em Ação!</h2>
+            <div class="screenshots">
+                <figure>
+                    <!-- ### SCREENSHOT 1 ### -->
+                    <img src="placeholder-screenshot-main.png" alt="Screenshot da tela principal do Lotofácil Pro Avançado" width="400" height="300">
+                    <figcaption>Interface limpa e organizada</figcaption>
+                </figure>
+                 <figure>
+                    <!-- ### SCREENSHOT 2 ### -->
+                    <img src="placeholder-screenshot-analysis.png" alt="Screenshot da área de análise de dados" width="400" height="300">
+                    <figcaption>Resumo da Análise: Insights valiosos</figcaption>
+                </figure>
+                 <figure>
+                    <!-- ### SCREENSHOT 3 ### -->
+                    <img src="placeholder-screenshot-results.png" alt="Screenshot dos jogos gerados" width="400" height="300">
+                    <figcaption>Jogos Gerados: Prontos para sua estratégia</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="depoimentos">
+            <h2>O Que Nossos Usuários (Hipotéticos) Estão Dizendo:</h2>
+             <blockquote>
+                <p>"Finalmente sinto que tenho uma estratégia! Antes era só aleatório. Com o Lotofácil Pro Avançado, analiso os dados e gero jogos com muito mais confiança. Já acertei 11 e 12 pontos algumas vezes seguindo as tendências que ele mostrou!"</p>
+                <cite>- Carlos M. (Jogador Estratégico)</cite>
+            </blockquote>
+            <blockquote>
+                <p>"A análise de pares e K-Means é fantástica! Revelou combinações que eu nunca teria pensado. O software é rápido e fácil de usar. Valeu cada centavo!"</p>
+                <cite>- Juliana P. (Entusiasta de Dados)</cite>
+            </blockquote>
+             <blockquote>
+                <p>"Cansei de perder dinheiro com 'esquemas' furados. Este software é diferente. Ele te dá DADOS e ANÁLISE para você montar sua própria estratégia. É uma ferramenta séria para quem leva a Lotofácil a sério."</p>
+                <cite>- Ricardo S. (Apostador Consciente)</cite>
+            </blockquote>
+            <p style="font-size: 0.9em; text-align: center; margin-top: 15px;"><em>(Depoimentos ilustrativos. Resultados individuais variam consideravelmente devido à natureza aleatória da loteria.)</em></p> <!-- Reforçando a variação -->
+        </section>
+
+         <section id="transparencia">
+            <div class="disclaimer danger">
+                <h2 style="color: #721c24;">🚨 ATENÇÃO: Compromisso com a Transparência 🚨</h2>
+                <p>É <strong>fundamental</strong> entender: Loteria é um jogo de <strong>azar</strong>. A Lotofácil envolve sorte e aleatoriedade.</p>
+                <p>O <strong>Lotofácil Pro Avançado <span style="text-decoration: underline; font-weight: bold;">NÃO GARANTE</span> que você ganhará prêmios.</strong> Nenhuma ferramenta pode fazer isso.</p>
+                <p><strong>O que nosso software FAZ é:</strong></p>
+                 <ul>
+                    <li>Analisar dados históricos massivos de forma rápida e eficiente.</li>
+                    <li>Revelar tendências e padrões estatísticos que podem existir nesses dados.</li>
+                    <li>Gerar combinações de jogos que se alinham a esses padrões históricos.</li>
+                    <li>Fornecer a VOCÊ as informações para tomar decisões MAIS INTELIGENTES sobre suas apostas, em vez de depender 100% da pura sorte.</li>
+                </ul>
+                 <p style="font-weight: bold; text-align: center; margin-top: 15px;">Use o Lotofácil Pro Avançado como sua ferramenta de análise e estratégia, não como uma bola de cristal. Jogue com responsabilidade.</p>
+            </div>
+        </section>
+
+         <section id="entrega">
+            <h2>O Que Você Recebe ao Adquirir Agora:</h2> <!-- Ajuste no título -->
+            <ul class="check-list">
+                <li><strong>🔑 Licença Vitalícia:</strong> Acesso completo ao software Lotofácil Pro Avançado v2.1 (MP) para seu computador pessoal.</li>
+                <li><strong>🔄 Atualizações Gratuitas:</strong> Receba futuras atualizações da versão 2.x com melhorias e correções.</li>
+                <li><strong>📊 Poder de Análise Ilimitado:</strong> Analise quantos concursos quiser, gere quantos jogos precisar.</li>
+                <li><strong>📄 Guia Rápido (Opcional):</strong> Um pequeno manual em PDF para você começar a usar o software rapidamente.</li>
+                <li><strong>📧 Suporte Prioritário (Opcional):</strong> Acesso ao nosso canal de suporte por e-mail para dúvidas sobre o uso do software (resposta em até X horas úteis).</li> <!-- Seja específico sobre o suporte -->
+            </ul>
+        </section>
+
+        <section id="oferta">
+            <h2>Sua Oportunidade de Jogar com Estratégia!</h2>
+            <p style="text-align: center;">Quantas vezes você já gastou em apostas aleatórias? Invista uma única vez em inteligência e potencialize suas análises!</p> <!-- Reforço no texto -->
+
+            <div class="pricing-box">
+                <h3>Oferta Especial de Lançamento!</h3>
+                <p>Adquira sua licença <span style="text-decoration: underline;">vitalícia</span> do Lotofácil Pro Avançado hoje por apenas:</p>
+                <!-- ### PREÇO REAL ### -->
+                <p class="price">R$ 97,00</p>
+                <p>(Pagamento Único - Sem Mensalidades para a Versão 2.x)</p>
+
+                <!-- ### BOTÃO DE COMPRA ### -->
+                <!-- Substitua #LINK_CHECKOUT pelo link REAL -->
+                <a href="#LINK_CHECKOUT" class="cta-button" style="font-size: 1.3em; padding: 12px 25px;">GARANTIR MINHA LICENÇA AGORA!</a>
+
+                <div class="payment-icons" style="margin-top: 20px;">
+                     <!-- ### ÍCONES PAGAMENTO/SEGURANÇA ### -->
+                     <img src="placeholder-icon-visa.png" alt="Visa">
+                     <img src="placeholder-icon-mastercard.png" alt="Mastercard">
+                     <img src="placeholder-icon-pix.png" alt="Pix">
+                     <img src="placeholder-icon-boleto.png" alt="Boleto">
+                     <img src="placeholder-icon-security.png" alt="Compra Segura">
+                    <p style="font-size: 0.9em;">Compra 100% Segura via [Nome da Plataforma de Pagamento]</p> <!-- Ex: Hotmart, Kiwify -->
+                </div>
+            </div>
+        </section>
+
+        <section id="garantia">
+             <div class="guarantee-box">
+                 <h2>Risco Zero Para Você Experimentar!</h2> <!-- Título focado no benefício -->
+                 <!-- ### SELO GARANTIA ### -->
+                 <img src="placeholder-seal-7days.png" alt="Selo de Garantia de 7 Dias">
+                 <h3>Garantia Incondicional de 7 Dias</h3>
+                 <p>Temos tanta confiança na capacidade analítica e na qualidade do Lotofácil Pro Avançado que oferecemos uma <strong>Garantia Incondicional de Satisfação de 7 Dias</strong>.</p>
+                <p>Se, dentro de 7 dias após a compra, você não ficar 100% satisfeito com as funcionalidades do software como ferramenta de análise e geração, basta nos enviar um único e-mail e nós reembolsaremos <strong>integralmente</strong> o valor investido. Simples assim.</p>
+                <p style="font-size: 1.2em; font-weight: bold; color: #28a745; margin-top: 15px;">Você não tem absolutamente NADA a perder!</p>
+             </div>
+        </section>
+
+        <section id="cta" class="cta-section">
+             <h2>Está Pronto Para Levar Suas Apostas na Lotofácil Para o Próximo Nível?</h2> <!-- Pergunta mais direta -->
+             <p style="font-size: 1.1em; margin-bottom: 25px;">Chega de depender apenas da sorte! Use dados, estatística e inteligência artificial para montar seus jogos. Clique no botão abaixo e adquira sua licença do <strong>Lotofácil Pro Avançado</strong>!</p>
+
+            <!-- ### BOTÃO DE COMPRA FINAL ### -->
+            <!-- Substitua #LINK_CHECKOUT pelo link REAL -->
+            <a href="#LINK_CHECKOUT" class="cta-button">👇 SIM, QUERO MINHA FERRAMENTA DE ANÁLISE! 👇</a>
+
+            <p style="margin-top: 20px; font-weight: bold;">Acesso Imediato Liberado Após a Confirmação do Pagamento!</p>
+        </section>
+
+        <section id="faq">
+            <h2>Perguntas Frequentes (FAQ)</h2>
+            <dl>
+                <dt>O software garante que vou ganhar?</dt>
+                <dd><strong>Não, de forma alguma.</strong> É impossível garantir ganhos na loteria, pois ela depende fundamentalmente da sorte. O software é uma ferramenta de ANÁLISE ESTATÍSTICA para identificar padrões passados e gerar jogos alinhados a eles, aumentando a inteligência da sua aposta, mas não garante prêmios.</dd>
+
+                <dt>Funciona em Mac/Linux?</dt>
+                <dd>Atualmente, o software foi desenvolvido e testado primariamente para <strong>Windows (versões 7, 8, 10 e 11)</strong>. A compatibilidade com Mac/Linux via emuladores (Wine, CrossOver, etc.) não é garantida ou suportada oficialmente.</dd> <!-- Mais específico -->
+
+                <dt>Preciso de internet para usar?</dt>
+                <dd><strong>Sim, para a função "Importar & Analisar"</strong>, pois o software precisa buscar os dados mais recentes dos sorteios online. Após a análise ser feita e salva (implicitamente), a geração de jogos com base nessa análise pode ser feita offline.</dd>
+
+                <dt>É difícil de usar?</dt>
+                <dd>Não! A interface foi projetada para ser o mais <strong>intuitiva</strong> possível. Mesmo que você não seja um expert em computadores ou estatística, conseguirá realizar análises e gerar jogos com poucos cliques. Oferecemos também um Guia Rápido para auxiliar.</dd>
+
+                 <dt>Como recebo o software após a compra?</dt>
+                <dd>Imediatamente após a confirmação do pagamento pela plataforma de vendas ([Nome da Plataforma]), você receberá um <strong>e-mail automático</strong> contendo o link seguro para download do instalador do programa e sua chave de licença pessoal e intransferível.</dd>
+
+                 <dt>A licença é realmente vitalícia?</dt>
+                <dd>Sim, a licença adquirida nesta oferta é <strong>vitalícia para a versão 2.x</strong> do Lotofácil Pro Avançado. Isso significa que você terá direito a todas as atualizações e melhorias lançadas dentro desta versão principal (v2.1, v2.2, v2.3, etc.) sem custo adicional. Novas versões maiores futuras (como uma hipotética v3.0 com mudanças radicais) poderiam, eventualmente, ter uma política de atualização diferente ou exigir uma nova aquisição.</dd> <!-- Mais detalhado -->
+
+                 <dt>Posso instalar em mais de um computador?</dt>
+                <dd>A licença padrão é válida para instalação em <strong>um (1) computador pessoal</strong>. Caso precise usar em mais máquinas, entre em contato para condições especiais.</dd> <!-- Política de licenciamento clara -->
+            </dl>
+        </section>
+
+        <footer>
+            <p>Copyright © 2024-2025 [Seu Nome ou Nome da Empresa]. Todos os direitos reservados.</p>
+             <!-- Links Reais Aqui -->
+            <p>Contato: <a href="mailto:[Seu Email de Suporte]">[Seu Email de Suporte]</a> | <a href="#link-politica-privacidade">Política de Privacidade</a> | <a href="#link-termos-uso">Termos de Uso</a></p>
+            <p class="disclaimer danger" style="font-size: 0.85em; margin-top: 15px;">A Lotofácil é um jogo destinado a maiores de 18 anos. Apostas devem ser feitas com moderação e responsabilidade. O jogo excessivo pode causar dependência. Se você ou alguém que conhece tem problemas com jogo, procure ajuda profissional.</p>
+        </footer>
+
+    </div> <!-- /container -->
+
 </body>
 </html>
